@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Carrinho - Plataforma de Cursos</title>
+    <link rel="stylesheet" href="./src/css/estilos.css">
+</head>
+<body>
+   <header id="cabecalho-principal" class="cabecalho">
+        <!-- O cabeçalho será carregado aqui pelo JavaScript -->
+    </header>
+
+    <main>
+        <section id="carrinho" class="secao">
+            <h1>Meu Carrinho de Compras</h1>
+            <p id="carrinho-vazio" class="mensagem-vazio hidden">Seu carrinho está vazio.</p>
+            <div id="itens-carrinho">
+                <!-- Os itens do carrinho serão inseridos aqui pelo JavaScript -->
+            </div>
+            <div id="total-carrinho" style="text-align: right; font-size: 1.5rem; margin-top: 2rem;">
+                <!-- O total será inserido aqui -->
+            </div>
+            <div class="acoes-carrinho" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                <a href="cursos.html" class="link-secundario">← Continuar comprando</a>
+                <button id="botao-finalizar-compra" class="botao-principal">Finalizar Compra</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2024 Plataforma de Cursos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

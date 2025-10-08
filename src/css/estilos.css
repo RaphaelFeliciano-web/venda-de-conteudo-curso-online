@@ -1,0 +1,697 @@
+/* ===== Variáveis Globais e Reset ===== */
+:root {
+    --cor-primaria: #4f46e5; /* Um azul/roxo moderno */
+    --cor-secundaria: #111827; /* Um cinza escuro para textos e fundos */
+    --cor-fundo: #f8fafc;
+    --cor-texto: #374151;
+    --cor-branco: #ffffff;
+    --cor-borda: #e5e7eb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.hidden {
+    display: none !important;
+}
+
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+/* ===== Cabeçalho e Navegação ===== */
+.cabecalho {
+    background-color: var(--cor-branco);
+    color: var(--cor-texto);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--cor-borda);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.navegacao > ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navegacao > ul > li > a {
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navegacao > ul > li > a:hover {
+    color: var(--cor-secundaria);
+}
+
+.nav-usuario {
+    font-weight: 500;
+    color: var(--cor-texto); /* Estilo para o texto "Olá, Nome" */
+}
+
+/* ===== Dropdown do Usuário (Submenu) ===== */
+
+.menu-suspenso-usuario {
+    position: relative; /* Essencial para o posicionamento do submenu */
+}
+
+.gatilho-menu-suspenso {
+    cursor: pointer;
+}
+
+.menu-suspenso {
+    display: none; /* Oculto por padrão */
+    position: absolute; /* Posicionado em relação ao pai (.menu-suspenso-usuario) */
+    top: 120%; /* Posição abaixo do nome do usuário */
+    right: 0;
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    min-width: 180px;
+    z-index: 1000;
+}
+
+.menu-suspenso-usuario.ativo .menu-suspenso {
+    display: block; /* Mostra o submenu quando o pai tem a classe 'ativo' */
+}
+
+.menu-suspenso li a {
+    padding: 0.75rem 1.5rem;
+    color: var(--cor-texto);
+    font-weight: 500;
+    display: block;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-suspenso .divisor {
+    height: 1px;
+    margin: 0.5rem 0;
+    background-color: var(--cor-borda);
+}
+.menu-suspenso li a:hover {
+    background-color: #f3f4f6; /* Um cinza claro no hover */
+}
+
+/* ===== Conteúdo Principal e Seções ===== */
+.secao {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.secao h1, .secao h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--cor-secundaria);
+}
+
+/* ===== Botões ===== */
+.botao-principal, button {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-principal:hover, button:hover {
+    background-color: #4338ca; /* Um tom mais escuro da cor primária */
+}
+
+.botao-secundario {
+    background-color: transparent;
+    color: var(--cor-texto);
+    border: 1px solid var(--cor-borda);
+}
+
+.botao-secundario:hover {
+    background-color: #f3f4f6;
+}
+.botao-secundario.concluido {
+    background-color: #e0f2fe;
+    color: #0c4a6e;
+    border-color: #bae6fd;
+    cursor: pointer; /* Garante que o cursor seja uma mãozinha */
+    transition: background-color 0.3s ease;
+}
+/* ===== Formulários (Login, Busca) ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.3);
+}
+
+/* Estilo para labels dos formulários */
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+    width: 100%;
+}
+
+.texto-alternativo {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+
+/* ===== Cards de Curso ===== */
+.container-cursos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.cartao-curso {
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cartao-curso img {
+    width: 100%;
+    height: 180px; /* Adiciona uma altura fixa para consistência */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.cartao-curso:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cartao-curso-conteudo {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cartao-curso h3 {
+    margin-bottom: 0.5rem;
+    color: var(--cor-secundaria);
+}
+
+.cartao-curso p {
+    flex-grow: 1; /* Empurra o link para o final */
+    margin-bottom: 1rem;
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branco);
+    padding: 2rem;
+    text-align: center;
+}
+
+/* ===== Página de Detalhes do Curso ===== */
+.container-detalhe-curso {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.coluna-conteudo {
+    flex: 2; /* Ocupa 2/3 do espaço */
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.coluna-conteudo h1 {
+    margin-top: 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.coluna-conteudo h1:hover {
+    color: var(--cor-primaria);
+}
+
+.container-video {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden; /* Garante que o vídeo respeite as bordas arredondadas */
+}
+.container-video video {
+    width: 100%; /* O vídeo ocupará toda a largura do seu contêiner */
+    height: auto;
+    display: block;
+}
+
+.video-oculto {
+    display: none;
+}
+
+.coluna-conteudo p {
+    margin-bottom: 2rem;
+}
+
+.coluna-conteudo h2 {
+    border-bottom: 2px solid var(--cor-borda);
+    padding-bottom: 0.5rem;
+    width: 100%;
+}
+
+.lista-curriculo {
+    list-style: none;
+    padding-left: 0;
+    width: 100%;
+    counter-reset: modulo-counter;
+}
+
+.lista-curriculo li {
+    padding: 1rem 0 1rem 2.5rem;
+    border-bottom: 1px solid var(--cor-borda);
+    position: relative;
+}
+
+.lista-curriculo li::before {
+    counter-increment: modulo-counter;
+    content: counter(modulo-counter);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.coluna-compra {
+    flex: 1; /* Ocupa 1/3 do espaço */
+    min-width: 280px;
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: sticky; /* Efeito "flutuante" ao rolar a página */
+    top: 2rem;
+}
+
+.coluna-compra img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    height: 180px; /* Altura fixa para consistência */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+.coluna-compra .preco {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cor-secundaria);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.lista-beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.lista-beneficios li {
+    margin-bottom: 0.75rem;
+    color: var(--cor-texto);
+}
+
+.coluna-compra button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+/* ===== Página do Carrinho ===== */
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--cor-borda);
+    font-size: 1.1rem;
+}
+
+.info-item-carrinho {
+    display: flex;
+    flex-direction: column;
+}
+
+.botao-remover-item {
+    background-color: #ef4444; /* Vermelho */
+    color: var(--cor-branco);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-remover-item:hover {
+    background-color: #dc2626; /* Vermelho mais escuro */
+}
+
+.link-secundario {
+    font-weight: 600;
+    color: var(--cor-texto);
+    transition: color 0.2s ease;
+}
+
+.mensagem-vazio {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+}
+
+/* ===== Seção de Depoimentos ===== */
+.container-depoimentos {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.cartao-depoimento {
+    background-color: var(--cor-branco);
+    border-left: 5px solid var(--cor-primaria);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    max-width: 450px;
+}
+
+.cartao-depoimento p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.cartao-depoimento footer {
+    font-weight: 600;
+    color: var(--cor-texto);
+    text-align: right;
+}
+
+/* ===== Página de Aula (Módulo) ===== */
+.pagina-aula-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    align-items: flex-start;
+}
+
+.conteudo-aula {
+    flex: 3; /* Ocupa mais espaço */
+}
+
+.conteudo-aula h1 {
+    text-align: left;
+}
+
+.conteudo-aula .acoes-aula {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+/* Estilo para o novo controle de conclusão (checkbox) */
+.controle-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    user-select: none; /* Impede a seleção de texto ao clicar */
+}
+
+.controle-checkbox:hover {
+    background-color: #f3f4f6;
+}
+
+.checkbox-icone {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--cor-texto);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+/* Estilo quando a aula está concluída */
+.controle-checkbox.concluido .checkbox-icone {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    color: var(--cor-branco);
+}
+
+.barra-lateral-modulos {
+    flex: 1;
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: sticky;
+    top: 2rem;
+}
+
+.barra-lateral-modulos h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+#lista-modulos-barra-lateral {
+    list-style: none;
+    padding: 0;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+#lista-modulos-barra-lateral li a {
+    display: block;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    color: var(--cor-texto);
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+#lista-modulos-barra-lateral li a:hover {
+    background-color: #f3f4f6;
+}
+
+#lista-modulos-barra-lateral li.ativo a {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    font-weight: 600;
+}
+
+/* Estilo para o ícone de "concluído" na barra lateral */
+#lista-modulos-barra-lateral li a.concluido::after {
+    content: '✓';
+    color: var(--cor-primaria);
+    font-weight: bold;
+    margin-left: 0.5rem;
+    float: right;
+}
+#lista-modulos-barra-lateral li.ativo a.concluido::after {
+    color: var(--cor-branco); /* Muda a cor do check quando o item está ativo */
+}
+
+/* ===== Painel do Aluno ===== */
+.curso-adquirido {
+    background-color: var(--cor-branco);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--cor-borda);
+}
+.curso-adquirido h3 {
+    margin-top: 0;
+}
+
+.progresso-info-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.progresso-info-container span {
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+    white-space: nowrap;
+}
+
+.progresso-curso {
+    flex-grow: 1;
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.barra-progresso {
+    height: 100%;
+    background-color: var(--cor-primaria);
+    border-radius: 4px;
+    transition: width 0.5s ease-in-out; /* Animação suave no carregamento */
+}
+
+/* ===== Paginação ===== */
+.container-paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+}
+
+.container-paginacao button {
+    background-color: var(--cor-branco);
+    color: var(--cor-primaria);
+    border: 1px solid var(--cor-borda);
+    padding: 0.5rem 1rem;
+    min-width: 40px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.container-paginacao button:hover {
+    background-color: #f3f4f6;
+}
+
+.container-paginacao button.ativo {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    border-color: var(--cor-primaria);
+}
+
+.container-paginacao button:disabled {
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* ===== Modal de Notificação Customizado ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 24, 39, 0.6); /* Cor de fundo semi-transparente */
+    backdrop-filter: blur(4px); /* Efeito de blur */
+    -webkit-backdrop-filter: blur(4px); /* Suporte para Safari */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-box {
+    background-color: var(--cor-branco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    transform: scale(0.95);
+    transition: transform 0.2s ease-in-out;
+}
+
+.modal-overlay:not(.hidden) {
+    opacity: 1;
+}
+
+.modal-overlay:not(.hidden) .modal-box {
+    transform: scale(1);
+}

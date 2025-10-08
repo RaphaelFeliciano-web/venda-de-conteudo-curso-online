@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Registro - Plataforma de Cursos</title>
+    <link rel="stylesheet" href="./src/css/estilos.css">
+</head>
+<body>
+    <header id="cabecalho-principal" class="cabecalho">
+        <!-- O cabeçalho será carregado aqui pelo JavaScript -->
+    </header>
+
+    <main>
+        <section id="formulario-login" class="secao">
+            <h2>Login</h2>
+            <form id="form-login">
+                <input type="email" id="login-email" placeholder="Seu e-mail" required>
+                <input type="password" id="login-senha" placeholder="Sua senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <p class="texto-alternativo">Ainda não tem conta? <a href="#" id="link-mostrar-registro">Registre-se aqui</a></p>
+        </section>
+
+        <section id="formulario-registro" class="secao hidden">
+            <h2>Crie sua Conta</h2>
+            <form id="form-registro">
+                <input type="text" id="registro-nome" placeholder="Seu nome" required>
+                <input type="email" id="registro-email" placeholder="Seu e-mail" required>
+                <input type="password" id="registro-senha" placeholder="Crie uma senha" required>
+                <button type="submit">Registrar</button>
+            </form>
+            <p class="texto-alternativo">Já tem uma conta? <a href="#" id="link-mostrar-login">Faça login aqui</a></p>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2024 Plataforma de Cursos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script type="module" src="./src/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Usuários - Painel Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin-estilos.css">
+</head>
+<body>
+    <div class="container-admin">
+        <aside class="menu-lateral">
+            <div class="logo-admin">
+                <h2>Admin</h2>
+            </div>
+            <nav class="navegacao-admin">
+                <ul>
+                    <li class="ativo"><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="cursos.html">Gerenciar Cursos</a></li>
+                    <li><a href="usuarios.html">Gerenciar Usuários</a></li>
+                    <li><a href="#" id="btn-logout">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="conteudo-principal">
+            <header class="conteudo-header">
+                <h1>Gerenciamento de Usuários</h1>
+            </header>
+            <section class="tabela-container">
+                <table id="tabela-usuarios">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Senha (Simulação)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Os usuários serão inseridos aqui pelo JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="tabela-container" style="margin-top: 2rem;">
+                <h2>Administradores do Sistema</h2>
+                <table id="tabela-admins">
+                    <thead>
+                        <tr>
+                            <th>E-mail</th>
+                            <th>Senha (Simulação)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Os administradores serão inseridos aqui -->
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+    <script type="module" src="../js/admin.js"></script>
+</body>
+</html>

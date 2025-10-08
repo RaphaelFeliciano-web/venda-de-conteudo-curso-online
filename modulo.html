@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo do Módulo</title>
+    <link rel="stylesheet" href="./src/css/estilos.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <!-- O cabeçalho será carregado aqui pelo JavaScript -->
+    </header>
+
+    <main>
+        <div class="pagina-aula-container">
+            <section id="conteudo-modulo" class="conteudo-aula">
+                <!-- O conteúdo do módulo será inserido aqui pelo JavaScript -->
+                <h1 id="titulo-modulo">Carregando...</h1>
+                <div class="container-video">
+                    <video controls></video>
+                </div>
+                <p id="descricao-modulo">Descrição da aula virá aqui.</p>
+                <div class="acoes-aula">
+                    <div id="controle-conclusao" class="controle-checkbox" role="button" tabindex="0">
+                        <span class="checkbox-icone"></span>
+                        <span class="checkbox-texto">Marcar como concluída</span>
+                    </div>
+                    <a id="link-voltar" href="#" class="botao-principal">Voltar para o curso</a>
+                </div>
+            </section>
+            <aside class="barra-lateral-modulos">
+                <h3 id="titulo-curso-barra-lateral">Nome do Curso</h3>
+                <ul id="lista-modulos-barra-lateral">
+                    <!-- A lista de módulos do curso será inserida aqui -->
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2024 Plataforma de Cursos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

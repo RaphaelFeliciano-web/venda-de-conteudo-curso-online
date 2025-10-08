@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Painel Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin-estilos.css">
+</head>
+<body>
+    <div class="container-admin">
+        <aside class="menu-lateral">
+            <div class="logo-admin">
+                <h2>Admin</h2>
+            </div>
+            <nav class="navegacao-admin">
+                <ul>
+                    <li class="ativo"><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="cursos.html">Gerenciar Cursos</a></li>
+                    <li><a href="usuarios.html">Gerenciar Usuários</a></li>
+                    <li><a href="#" id="botao-sair">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="conteudo-principal">
+            <header>
+                <h1>Visão Geral</h1>
+            </header>
+            <section class="cards-info">
+                <div class="card">
+                    <h3>Total de Alunos</h3>
+                    <p id="total-alunos">0</p>
+                </div>
+                <div class="card">
+                    <h3>Cursos Ativos</h3>
+                    <p id="total-cursos">0</p>
+                </div>
+                <div class="card">
+                    <h3>Vendas (Mês)</h3>
+                    <p>R$ 0,00</p>
+                </div>
+            </section>
+            <section class="tabela-container" style="margin-top: 2rem;">
+                <h2>Cursos Cadastrados</h2>
+                <table id="tabela-cursos">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Preço</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Cursos recentes aqui -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="../js/admin.js"></script> 
+</body>
+</html>

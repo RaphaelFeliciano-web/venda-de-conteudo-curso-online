@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Cursos - Plataforma de Cursos</title>
+    <link rel="stylesheet" href="./src/css/estilos.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">Logo</div>
+        <nav class="navegacao">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="lista-de-cursos.html">Cursos</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="lista-cursos" class="secao">
+            <h1>Explore Nossos Cursos</h1>
+            <div class="filtros-container" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <input type="search" id="campo-busca" placeholder="Buscar por nome do curso...">
+                <select id="filtro-categoria">
+                    <option value="">Todas as categorias</option>
+                    <option value="iniciante">Iniciante</option>
+                    <option value="avancado">Avançado</option>
+                </select>
+            </div>
+            <div class="container-cursos">
+                <!-- Os cursos serão inseridos aqui pelo JavaScript -->
+            </div>
+            <div id="paginacao-container" class="paginacao-container">
+                <!-- Os botões de paginação serão inseridos aqui pelo JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2024 Plataforma de Cursos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

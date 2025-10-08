@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Plataforma de Cursos</title>
+    <link rel="stylesheet" href="./src/css/estilos.css">
+</head>
+<body>
+    <header id="cabecalho-principal" class="cabecalho">
+        <!-- O cabeçalho será carregado aqui pelo JavaScript -->
+    </header>
+
+    <main>
+        <section id="perfil-aluno" class="secao">
+            <h1>Meu Perfil</h1>
+            <form id="formulario-perfil">
+                <div class="campo-form">
+                    <label for="perfil-nome">Nome Completo</label>
+                    <input type="text" id="perfil-nome" required>
+                </div>
+                <div class="campo-form">
+                    <label for="perfil-email">E-mail (não pode ser alterado)</label>
+                    <input type="email" id="perfil-email" disabled>
+                </div>
+                
+                <button type="submit" class="botao-principal">Salvar Alterações</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2024 Plataforma de Cursos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>
